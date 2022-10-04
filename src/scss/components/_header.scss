@@ -268,10 +268,32 @@
         outline: none;
         transition: width 250ms var(--default-cubic);
 
+        &:hover {
+
+          & svg {
+            fill: var(--amethyst-color);
+          }
+        }
+
+        &:focus {
+
+          & svg {
+            fill: var(--amethyst-color);
+          }
+        }
+
+        &:active {
+
+          & svg {
+            fill: var(--royal_purple-color);
+          }
+        }
+
         & svg {
           width: 100%;
           height: 100%;
           fill: var(--white-color);
+          transition: fill 250ms var(--default-cubic);
         }
       }
 

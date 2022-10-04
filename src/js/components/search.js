@@ -47,22 +47,24 @@ searchBtn.addEventListener('click', () => {
 });
 
 $(document).keyup(function (e) {
-  if (window.innerWidth >= 1024) {
-    inputSearch.style.width = '0px';
-    inputSearch.style.margin = '0px';
-    closeBtn.style.width = '0px';
-  } else if ((window.innerWidth >= 768)) {
-    inputSearch.style.width = '0px';
-    inputSearch.style.margin = '0px';
-    closeBtn.style.width = '0px';
-    searchBtn.style.width = '27px';
-    headerLogo.style.display = 'flex';
-    headerBurger.style.display = 'flex';
-  } else if ((window.innerWidth < 768)) {
-    inputSearch.style.width = '0px';
-    inputSearch.style.margin = '0px';
-    closeBtn.style.width = '0px';
-    headerLogo.style.display = 'flex';
-    headerBurger.style.display = 'flex';
-  }
+  if (e.key === "Escape") {
+    if (window.innerWidth >= 1024) {
+      inputSearch.style.width = '0px';
+      inputSearch.style.margin = '0px';
+      closeBtn.style.width = '0px';
+    } else if ((window.innerWidth >= 768)) {
+      inputSearch.style.width = '0px';
+      inputSearch.style.margin = '0px';
+      closeBtn.style.width = '0px';
+      searchBtn.style.width = '27px';
+      headerLogo.style.display = 'flex';
+      headerBurger.style.display = 'flex';
+    } else if ((window.innerWidth < 768)) {
+      inputSearch.style.width = '0px';
+      inputSearch.style.margin = '0px';
+      closeBtn.style.width = '0px';
+      headerLogo.style.display = 'flex';
+      headerBurger.style.display = 'flex';
+    }
+}
 });

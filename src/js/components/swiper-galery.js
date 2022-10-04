@@ -39,7 +39,7 @@ const swiper = new Swiper('.galery__swiper', {
     320: {
       slidesPerView: 1,
       slidesPerGroup: 1,
-      spaceBetween: 0,
+      spaceBetween: 25,
       simulateTouch: true,
     },
   }
@@ -50,4 +50,13 @@ jQuery('.swiper-slide__wrap').hover(function () {
   jQuery(this).addClass('slide-hover');
 }, function () {
   jQuery(this).removeClass('slide-hover');
+});
+
+document.querySelectorAll('.swiper-slide__wrap-hover').forEach(e => {
+  e.addEventListener('click', () => {
+    e.classList.add('slide-active');
+  });
+  // e.addEventListener('outside', () => {
+  //   e.classList.remove('slide-active');
+  // })
 });

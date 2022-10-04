@@ -6,7 +6,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-bottom: 100vh;
+
+  @include tablet {
+    height: 560px;
+  }
+
+  @include small-tablet {
+    height: 889px;
+  }
+
+  @include mobile {
+    height: 800.5px;
+  }
 
   &__container {
     padding-top: 80px;
@@ -16,6 +27,18 @@
     display: flex;
     flex-direction: row;
     gap: 50px;
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 50px;
+      padding-bottom: 25px;
+    }
   }
 
   &__filter {
@@ -29,6 +52,14 @@
       font-weight: 400;
       font-size: 48px;
       line-height: 65px;
+
+      @include mobile {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 38px;
+      }
     }
 
     &-dropdown {
@@ -43,6 +74,11 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 32px;
+
+        @include mobile {
+          margin-top: 13px;
+          margin-bottom: 4px;
+        }
       }
     }
 
@@ -50,12 +86,38 @@
       display: flex;
       flex-direction: column;
       margin-top: auto;
+
+      @include tablet {
+        margin-top: 106.5px;
+      }
+
+      @include small-tablet {
+        margin-top: 40px;
+      }
+
+      @include mobile {
+        margin-top: 30px;
+      }
     }
   }
 
   &__swiper {
     width: 1150px;
     overflow: hidden;
+
+    @include tablet {
+      width: 594px;
+    }
+
+    @include small-tablet {
+      width: 668px;
+    }
+
+    @include mobile {
+      width: 290px;
+      display: flex;
+      flex-direction: column-reverse;
+    }
 
     & .swiper-nav {
       display: flex;
@@ -65,6 +127,26 @@
       margin-top: 24px;
       margin-bottom: 30px;
       margin-left: 3px;
+
+      @include tablet {
+        margin-left: 1px;
+        margin-bottom: 29px;
+      }
+
+      @include small-tablet {
+        margin-left: 0.5px;
+        margin-bottom: 29px;
+        margin-top: -1px;
+      }
+
+      @include mobile {
+        margin-bottom: 0;
+        margin-top: 20px;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        gap: 19px;
+      }
     }
 
     & .swiper-pagination {
@@ -90,6 +172,7 @@
       align-items: center;
       border-radius: 50%;
       border: solid 0px var(--black-color);
+      cursor: pointer;
       transition: background 250ms var(--default-cubic),
         border 250ms var(--default-cubic);
 
@@ -151,6 +234,19 @@
     & .swiper-wrapper {
       width: 1150px;
       display: flex;
+      cursor: grab;
+
+      @include tablet {
+        width: 594px;
+      }
+
+      @include small-tablet {
+        width: 668px;
+      }
+
+      @include mobile {
+        width: 290px;
+      }
     }
 
     & .swiper-slide {
@@ -163,6 +259,21 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+
+        @include tablet {
+          width: 280px;
+          height: 315px;
+        }
+
+        @include small-tablet {
+          width: 315px;
+          height: 330px;
+        }
+
+        @include mobile {
+          width: 290px;
+          height: 367px;
+        }
 
         &.slide-hover {
 
@@ -181,10 +292,24 @@
           left: 0;
         }
 
+        &-active {
+          width: 350px;
+          height: 350px;
+          position: absolute;
+          z-index: 2;
+          top: -25px;
+          left: -25px;
+          background: var(--bright_lavender-color-07);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 250ms var(--default-cubic),
+            visibility 250ms var(--default-cubic);
+        }
+
         &-hover {
           position: relative;
           top: -6px;
-          z-index: 1;
+          z-index: 3;
           width: 300px;
           height: 300px;
           background: var(--black-color-50);
@@ -275,11 +400,9 @@
   }
 }
 
-
-
-
-
 .filter-dropdown {
+  width: 400px;
+  height: 40px;
   background: transparent;
   transition: all 500ms var(--default-cubic);
   position: relative;
@@ -290,11 +413,21 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
-  width: 400px;
-  height: 40px;
   border: solid 1px var(--white-color);
   border-radius: 6px;
   transition: background 150ms var(--default-cubic);
+
+  @include tablet {
+    width: 280px;
+  }
+
+  @include small-tablet {
+    width: 280px;
+  }
+
+  @include mobile {
+    width: 290px;
+  }
 
   &:hover {
     background: var(--white-color-20);
@@ -322,7 +455,6 @@
   color: var(--white-color);
   transition: color 250ms var(--default-cubic),
     background 250ms var(--default-cubic);
-  ;
 }
 
 .filter-dropdown .select>i {
@@ -370,6 +502,18 @@
   line-height: 25px;
   text-align: start;
   transition: background 250ms var(--default-cubic);
+
+  @include tablet {
+    width: 280px;
+  }
+
+  @include small-tablet {
+    width: 280px;
+  }
+
+  @include mobile {
+    width: 290px;
+  }
 }
 
 .filter-dropdown-container {
