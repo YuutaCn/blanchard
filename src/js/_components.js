@@ -1,3 +1,5 @@
 import "./components/dropdown"
 import "./components/search"
 import "./components/hero-slider"
+import "./components/filter-dropdown"
+import "./components/swiper-galery"

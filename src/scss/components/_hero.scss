@@ -31,7 +31,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: background 700ms var(--default-cubic) 1000ms;
+    transition: background 3000ms ease-in-out 3000ms;
   }
 
   &__container {
