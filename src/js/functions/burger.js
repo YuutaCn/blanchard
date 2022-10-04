@@ -1,7 +1,7 @@
 import { disableScroll } from '../functions/disable-scroll';
 import { enableScroll } from '../functions/enable-scroll';
 
-(function(){
+(function () {
   const burger = document?.querySelector('[data-burger]');
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
@@ -38,5 +38,15 @@ import { enableScroll } from '../functions/enable-scroll';
       menu.classList.remove('menu--active');
       enableScroll();
     });
+  });
+
+  $(document).keyup(function (e) {
+    if (e.key === "Escape") {
+      burger?.setAttribute('aria-expanded', 'false');
+      burger?.setAttribute('aria-label', 'Открыть меню');
+      burger.classList.remove('burger--active');
+      menu.classList.remove('menu--active');
+      enableScroll();
+    }
   });
 })();
