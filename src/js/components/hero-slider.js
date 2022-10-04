@@ -19,5 +19,5 @@ setInterval(() => {
 
   var src = $(".current").text();
   $(".slider").css({ 'background-image': 'url(' + src + ')' });
-}, 1700);
+}, 5000);
 

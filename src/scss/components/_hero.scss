@@ -8,6 +8,18 @@
   height: 800px;
   position: relative;
 
+  @include tablet {
+    height: 770px;
+  }
+
+  @include small-tablet {
+    height: 770px;
+  }
+
+  @include mobile {
+    height: 355px;
+  }
+
   & .slider {
     position: absolute;
     top: 0;
@@ -27,6 +39,21 @@
     z-index: 1;
     top: 235px;
     width: 100%;
+
+    @include tablet {
+      top: 207px;
+    }
+
+    @include small-tablet {
+      top: 207px;
+    }
+
+    @include mobile {
+      top: 77px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__h2 {
@@ -38,6 +65,16 @@
     color: var(--white-color);
     letter-spacing: 0.1px;
     width: 597px;
+
+    @include mobile {
+      width: 258px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 44px;
+      text-align: center;
+    }
   }
 
   &__p {
@@ -49,15 +86,38 @@
     color: var(--white-color);
     margin-top: -3px;
     width: 597px;
+
+    @include tablet {
+      width: 700px;
+      margin-top: -10px;
+    }
+
+    @include small-tablet {
+      width: 700px;
+      margin-top: -10px;
+    }
+
+    @include mobile {
+      width: 258px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      margin-top: 1px;
+    }
   }
+
 
   &__btn {
     width: 314px;
     height: 70px;
     background: var(--amethyst-color);
-    border: none;
+    border: solid 2px var(--amethyst-color);
     border-radius: 100px;
-    outline: none;
+    outline: solid 0px var(--bright_lavender-color);
+    outline-offset: 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -68,6 +128,44 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
-    color: var(--default-cubic);
+    color: var(--white-color);
+    transition: border 250ms var(--default-cubic),
+      outline 150ms var(--default-cubic),
+      outline-offset 150ms var(--default-cubic),
+      background 150ms var(--default-cubic);
+
+    @include tablet {
+      margin-top: 132px;
+    }
+
+    @include small-tablet {
+      margin-top: 132px;
+    }
+
+    @include mobile {
+      width: 200px;
+      height: 40px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      margin-top: 42px;
+    }
+
+    &:focus {
+      outline: solid 2px var(--bright_lavender-color);
+      outline-offset: 5px;
+    }
+
+    &:hover {
+      border: solid 2px var(--bright_ube-color);
+    }
+
+    &:active {
+      border: solid 2px var(--bright_ube-color);
+      background: var(--royal_purple-color);
+    }
   }
 }
