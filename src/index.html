@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html',{
+  'title':'Blanchard'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    <h1>Blanchard художественная галерея</h1>
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/hero.html')
+      @include('partials/about.html')
+      @include('partials/galery.html')
+      @include('partials/catalog.html')
+
+    </main>
+    @include('partials/footer.html')
+    @include('partials/burger.html')
+
+  </div>
+  @include('partials/galery-modals.html')
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+.graph-modal {
+  background: var(--black-color-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    width: 900px;
+    height: 500px;
+    background: var(--white-color);
+    border-radius: 0px;
+    box-shadow: 0px 0px 80px var(--black-color-80);
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20%);
+    transition: all 250ms var(--default-cubic);
+
+    @include tablet {
+      width: 594px;
+      height: 594px;
+    }
+
+    @include small-tablet {
+      width: 668px;
+      height: 594px;
+    }
+
+    @include mobile {
+      width: 290px;
+      height: 600px;
+    }
+  }
+
+  &__img {
+    width: 400px;
+    height: 100%;
+    background: var(--black-color);
+
+    @include tablet {
+      width: 264px;
+    }
+
+    @include small-tablet {
+      width: 301px;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 200px;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: cover;
+    }
+  }
+
+  &__close {
+    width: 16px;
+    height: 16px;
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 99999;
+    top: 20px;
+    right: 20px;
+
+    &-btn {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+
+        & svg {
+          fill: var(--amethyst-color);
+        }
+      }
+
+      &:focus {
+
+        & svg {
+          fill: var(--amethyst-color);
+        }
+      }
+
+      &:active {
+
+        & svg {
+          fill: var(--royal_purple-color);
+        }
+      }
+
+      &-svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--black-color);
+        cursor: pointer;
+        transition: fill 250ms var(--default-cubic);
+      }
+    }
+  }
+
+  &__container-content {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include tablet {
+      width: 330px;
+    }
+
+    @include small-tablet {
+      width: 367px;
+    }
+
+    @include mobile {
+      width: 290px;
+      max-height: 357px;
+      top: 217px;
+    }
+
+    &-text {
+      width: 401px;
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        width: 230px;
+        max-height: 500px;
+        overflow: scroll;
+      }
+
+      @include small-tablet {
+        width: 281px;
+        max-height: 500px;
+        overflow: scroll;
+      }
+
+      @include mobile {
+        width: 249px;
+        max-height: 357px;
+        overflow:scroll;
+      }
+
+      &-name {
+        color: var(--gray_amber-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 5px;
+
+        @include mobile {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 33px;
+        }
+      }
+
+      &-item {
+        color: var(--gray_amber-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+
+        @include mobile {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+
+      &-years {
+        color: var(--signal_gray-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 39px;
+
+        @include mobile {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          margin-bottom: 12px;
+        }
+      }
+
+      &-desc {
+        color: var(--gray_amber-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+
+        @include mobile {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+.graph-modal-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
