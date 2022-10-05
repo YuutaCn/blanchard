@@ -322,6 +322,21 @@
           transition: opacity 250ms var(--default-cubic),
             visibility 250ms var(--default-cubic);
 
+          @include tablet {
+            width: 230px;
+            height: 230px;
+          }
+
+          @include small-tablet {
+            width: 280px;
+            height: 280px;
+          }
+
+          @include mobile {
+            width: 240px;
+            height: 240px;
+          }
+
           &-svg {
             position: relative;
             top: -8.5px;
