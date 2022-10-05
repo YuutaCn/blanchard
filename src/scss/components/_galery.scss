@@ -186,48 +186,50 @@
       }
 
       &-svg {
-        width: 12px;
-        height: 12px;
-        fill: var(--white-color);
+        width: 7px;
+        height: 7px;
+        border-bottom: solid 1px var(--white-color);
+        border-right: solid 1px var(--white-color);
+        position: relative;
+        left: -1.5px;
+        top: -1.5px;
+        transition: border 250ms var(--default-cubic);
       }
+    }
+
+    & .swiper-button-prev {
+      transform: rotateZ(135deg);
+    }
+
+    & .swiper-button-next {
+      transform: rotateZ(-45deg);
     }
 
     & .swiper-button-disabled {
       background: var(--isabelline-color);
 
       &:hover {
-        background: var(--dim_gray-color);
+        background: var(--isabelline-color);
 
         & svg {
-          fill: var(--white-color);
+          border-bottom: solid 1px var(--pastel_gray-color);
+          border-right: solid 1px var(--pastel_gray-color);
         }
       }
 
       &:active {
-        background: var(--dim_gray-color);
+        background: var(--isabelline-color);
         border: solid 2px var(--black-color);
 
         & svg {
-          fill: var(--white-color);
+          border-bottom: solid 1px var(--pastel_gray-color);
+          border-right: solid 1px var(--pastel_gray-color);
         }
       }
 
       & svg {
-        fill: var(--pastel_gray-color);
-      }
-    }
-
-    & .swiper-button-prev {
-
-      &-svg {
-        transform: rotateZ(-90deg);
-      }
-    }
-
-    & .swiper-button-next {
-
-      &-svg {
-        transform: rotateZ(90deg);
+        border-bottom: solid 1px var(--pastel_gray-color);
+        border-right: solid 1px var(--pastel_gray-color);
       }
     }
 
@@ -475,22 +477,25 @@
 .filter-dropdown .select>i {
   cursor: pointer;
   transition: all 250ms var(--default-cubic);
-  width: 10px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   display: flex;
   transform: rotate(180deg);
   margin-left: auto;
 
   & svg {
-    width: 10px;
-    height: 5px;
-    fill: var(--white-color);
-    transition: fill 250ms var(--default-cubic);
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 1px var(--white-color);
+    border-right: solid 1px var(--white-color);
+    fill: transparent;
+    transform: rotateZ(-135deg);
+    transition: border 250ms var(--default-cubic);
   }
 }
 
 .filter-dropdown.active .select>i {
-  transform: rotate(0deg)
+  transform: rotate(0deg) translateY(3px);
 }
 
 .filter-dropdown .filter-dropdown-menu {
@@ -500,7 +505,7 @@
   border: solid 1px var(--signal_gray-color);
   border-radius: 6px;
   width: 400px;
-  left: 0;
+  left: -1px;
   top: 39px;
   overflow: hidden;
   display: none;
