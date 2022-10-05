@@ -1,0 +1,144 @@
+.graph-modal {
+  background: var(--black-color-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    width: 900px;
+    height: 500px;
+    background: var(--white-color);
+    border-radius: 0px;
+    box-shadow: 0px 0px 80px var(--black-color-80);
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20%);
+    transition: all 250ms var(--default-cubic);
+  }
+
+  &__img {
+    width: 400px;
+    height: 100%;
+    background: var(--black-color);
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: cover;
+    }
+  }
+
+  &__close {
+    width: 16px;
+    height: 16px;
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 99999;
+    top: 20px;
+    right: 20px;
+
+    &-btn {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &-svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--black-color);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__container-content {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &-text {
+      width: 401px;
+      display: flex;
+      flex-direction: column;
+
+      &-name {
+        color: var(--gray_amber-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 5px;
+      }
+
+      &-item {
+        color: var(--gray_amber-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      &-years {
+        color: var(--signal_gray-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 39px;
+      }
+
+      &-desc {
+        color: var(--gray_amber-color);
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+
+.animate-open {
+  // opacity: 1;
+  // visibility: visible;
+  // transform: translateX(0);
+}
+
+
+.graph-modal-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.is-open {
+}
+
+
+.site-container {
+}

@@ -11,4 +11,7 @@ $('.filter-dropdown').focusout(function () {
 $('.filter-dropdown .filter-dropdown-menu li').click(function () {
   $(this).parents('.filter-dropdown').find('span').text($(this).text());
   $(this).parents('.filter-dropdown').find('input').attr('value', $(this).attr('id'));
+  setTimeout(() => {
+    $(this).parents('.filter-dropdown-container').css('max-height', '120px');
+  }, 300);
 });

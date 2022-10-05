@@ -33,6 +33,7 @@ a {
 
 .site-container {
   overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  transition: filter 150ms var(--default-cubic);
 }
 
 .is-hidden {
