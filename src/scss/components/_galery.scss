@@ -207,6 +207,7 @@
 
     & .swiper-button-disabled {
       background: var(--isabelline-color);
+      cursor: default;
 
       &:hover {
         background: var(--isabelline-color);
@@ -219,7 +220,7 @@
 
       &:active {
         background: var(--isabelline-color);
-        border: solid 2px var(--black-color);
+        border: solid 0px var(--black-color);
 
         & svg {
           border-bottom: solid 1px var(--pastel_gray-color);

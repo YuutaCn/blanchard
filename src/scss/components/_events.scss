@@ -83,6 +83,11 @@
           visibility 250ms var(--default-cubic),
           background 250ms var(--default-cubic);
 
+        &.swiper-button-disabled {
+          opacity: 0;
+          visibility: hidden;
+        }
+
         &:hover {
           background: var(--bright_ube-color);
           border: solid 2px var(--bright_ube-color);
@@ -175,18 +180,22 @@
     &-slide {
       display: flex;
       flex-direction: column;
-      width: 500px;
+      min-width: 500px;
+      max-width: 500px;
 
       @include tablet {
-        width: 290px;
+        min-width: 290px;
+        max-width: 290px;
       }
 
       @include small-tablet {
-        width: 317px;
+        min-width: 317px;
+        max-width: 317px;
       }
 
       @include mobile {
-        width: 290px;
+        min-width: 290px;
+        max-width: 290px;
       }
 
       &-img {
@@ -366,15 +375,7 @@
             background-image: linear-gradient(var(--gray_amber-color), var(--gray_amber-color));
           }
         }
-
       }
-
-
     }
   }
-}
-
-.swiper-button-disabled {
-  opacity: 0;
-  visibility: hidden;
 }

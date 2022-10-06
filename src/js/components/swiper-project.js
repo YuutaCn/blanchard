@@ -1,0 +1,55 @@
+import Swiper, { Navigation } from 'swiper';
+
+Swiper.use([Navigation]);
+
+const swiper = new Swiper('.project__swiper', {
+  navigation: {
+    nextEl: '.swiper-button-next-project',
+    prevEl: '.swiper-button-prev-project',
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+  initialSlide: 0,
+
+  breakpoints: {
+    1920: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 50,
+      simulateTouch: true,
+    },
+    1024: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50,
+      simulateTouch: true,
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 33.97,
+      simulateTouch: true,
+    },
+    320: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 25,
+      simulateTouch: true,
+    },
+  }
+
+});
+
+jQuery('.swiper-slide__wrap').hover(function () {
+  jQuery(this).addClass('slide-hover');
+}, function () {
+  jQuery(this).removeClass('slide-hover');
+});
+
+document.querySelectorAll('.swiper-slide__wrap-hover').forEach(e => {
+  e.addEventListener('click', () => {
+    e.classList.add('slide-active');
+  });
+});

@@ -43,10 +43,39 @@ const modal = new GraphModal();
 // import 'simplebar';
 
 // Подключение плагина для позиционирования тултипов
-// import { createPopper, right} from '@popperjs/core';
-// createPopper(el, tooltip, {
-//   placement: 'right'
-// });
+import { createPopper, right } from '@popperjs/core';
+
+const tooltipContainer = document.querySelectorAll('.tooltip');
+
+tooltipContainer.forEach(tooltipContainer => {
+  const el = tooltipContainer.querySelector('.tooltip__btn');
+  const tooltip = tooltipContainer.querySelector('.tooltip__txt');
+  const arrow = tooltipContainer.querySelector('#arrow');
+  createPopper(el, tooltip, {
+    placement: 'auto',
+    modifiers: [
+      {
+        name: "offset",
+        options: {
+          offset: [0, 6.5]
+        }
+      },
+      {
+        name: "flip",
+        options: {
+          allowedAutoPlacements: ["top"]
+        }
+      },
+      {
+        name: 'arrow',
+        options: {
+          element: arrow,
+        }
+      },
+    ]
+  });
+});
+
 
 // Подключение свайпера
 // import Swiper, { Navigation, Pagination } from 'swiper';
