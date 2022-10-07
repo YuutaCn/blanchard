@@ -50,14 +50,14 @@ const tooltipContainer = document.querySelectorAll('.tooltip');
 tooltipContainer.forEach(tooltipContainer => {
   const el = tooltipContainer.querySelector('.tooltip__btn');
   const tooltip = tooltipContainer.querySelector('.tooltip__txt');
-  const arrow = tooltipContainer.querySelector('#arrow');
+  const arrow = tooltipContainer.querySelector('.arrow');
   createPopper(el, tooltip, {
     placement: 'auto',
     modifiers: [
       {
         name: "offset",
         options: {
-          offset: [0, 6.5]
+          offset: [0,9]
         }
       },
       {

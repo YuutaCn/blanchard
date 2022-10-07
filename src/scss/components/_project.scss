@@ -125,7 +125,7 @@
         transition: rotate 250ms var(--default-cubic),
           border-radius 250ms var(--default-cubic) 100ms;
 
-        & #arrow {
+        & .arrow {
           width: 8px;
           height: 8px;
           bottom: -4px;
