@@ -18,8 +18,8 @@ ymaps.modules.define('Panel', [
           map.margin.addArea({
               top: 0,
               left: 0,
-              width: '1920px',
-              height: '700px'
+              width: '0px',
+              height: '0px'
           })
       },
 
@@ -33,7 +33,7 @@ ymaps.modules.define('Panel', [
       _onGetChildElement: function (parentDomContainer) {
           // Создаем HTML-элемент с текстом.
           // По-умолчанию HTML-элемент скрыт.
-          this._$control = $('<div class="contact__map-control" style="display: none; opacity: 0; visibility: hidden; transform: translateX(-100%);"><div class="contact__map-control-content"></div><div class="closeButton"><button><svg class="contact-close"><use xlink:href="../img/sprite.svg#close"></use></svg></button></div></div>').appendTo(parentDomContainer);
+          // this._$control = $('<div class="contact__map-control" style="display: none; opacity: 0; visibility: hidden; transform: translateX(-100%);"><div class="contact__map-control-content"></div><div class="closeButton"><button><svg class="contact-close"><use xlink:href="../img/sprite.svg#close"></use></svg></button></div></div>').appendTo(parentDomContainer);
           this._$content = $('.contact__map-control-content');
           // При клике по крестику будем скрывать панель.
           $('.closeButton').on('click', this._onClose);
