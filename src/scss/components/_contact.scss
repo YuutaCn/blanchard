@@ -66,6 +66,8 @@
 
     @include tablet {
       flex-direction: column;
+      justify-content: center;
+      align-items: start;
       height: 335px;
       gap: 35px;
     }
@@ -181,9 +183,9 @@
       }
 
       &-label {
+        position: relative;
         width: 270px;
         height: 100%;
-        overflow: hidden;
 
         @include small-tablet {
           width: 323px;
@@ -216,6 +218,22 @@
             border 250ms var(--default-cubic),
             color 250ms var(--default-cubic);
 
+            &.just-validate-error-field {
+              border: solid 1px var(--carnelian-color);
+            }
+
+            +.just-validate-error-label {
+              position: absolute;
+              top: -18px;
+              left: 24px;
+              color: var(--carnelian-color);
+              font-family: 'Open Sans';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 16px;
+            }
+
           &::placeholder {
             color: var(--signal_gray-color);
             font-family: 'Open Sans';
@@ -223,7 +241,8 @@
             font-weight: 400;
             font-size: 16px;
             line-height: 32px;
-            transition: transform 250ms var(--default-cubic);
+            transition: transform 250ms var(--default-cubic),
+              opacity 250ms var(--default-cubic);
           }
 
           &:hover {
@@ -234,7 +253,7 @@
             background: var(--isabelline-color);
 
             &::placeholder {
-              transform: translateX(120%);
+              transform: translateX(200%);
             }
           }
 
@@ -243,7 +262,7 @@
             outline: none;
 
             &::placeholder {
-              transform: translateX(120%);
+              transform: translateX(200%);
             }
           }
         }
@@ -449,7 +468,6 @@
   }
 }
 
-
 .ymaps-2-1-79-gotoymaps__container,
 .ymaps-2-1-79-gototaxi__container,
 .ymaps-2-1-79-gototech,
@@ -461,3 +479,4 @@
 .ymaps-2-1-79-ground-pane {
   filter: grayscale(1);
 }
+

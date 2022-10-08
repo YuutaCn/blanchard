@@ -105,11 +105,39 @@ const scroll = new SmoothScroll('a[href*="#"]');
 //   console.log(e.detail.dir);
 // });
 
-// import { validateForms } from './functions/validate-forms';
-// const rules1 = [...];
+import { validateForms } from './functions/validate-forms';
+const rules1 = [
+  {
+    ruleSelector: '.contact__up-form-name',
+    rules: [
+      {
+        rule: 'minLength',
+        value: 3,
+        errorMessage: 'Недопустимый формат'
+      },
+      {
+        rule: 'required',
+        value: true,
+        errorMessage: 'Заполните имя!'
+      }
+    ]
+  },
+  {
+    ruleSelector: '.contact__up-form-phone',
+    tel: true,
+    telError: 'Введите корректный телефон',
+    rules: [
+      {
+        rule: 'required',
+        value: true,
+        errorMessage: 'Заполните телефон!'
+      }
+    ]
+  },
+];
 
-// const afterForm = () => {
-//   console.log('Произошла отправка, тут можно писать любые действия');
-// };
+const afterForm = () => {
+  console.log('Произошла отправка, тут можно писать любые действия');
+};
 
-// validateForms('.form-1', rules1, afterForm);
+validateForms('.contact__up-form', rules1, afterForm);
