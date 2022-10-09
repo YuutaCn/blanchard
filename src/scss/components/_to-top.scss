@@ -1,0 +1,84 @@
+.to-top {
+  position: fixed;
+  bottom: 70px;
+  right: 70px;
+  transform: translateX(50vw);
+  transition: transform 1s var(--default-cubic);
+
+  @include small-tablet {
+    bottom: 30px;
+    right: 40px;
+  }
+
+  @include mobile {
+    bottom: 20px;
+    right: 30px;
+  }
+
+  &.show-to-top {
+    transform: translateX(0);
+  }
+
+  &__btn {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #D1A9F000;
+    cursor: pointer;
+    border: solid 3px var(--bright_ube-color);
+    transition: background 250ms var(--default-cubic),
+      border 250ms var(--default-cubic);
+
+      @include small-tablet {
+        width: 60px;
+        height: 60px;
+      }
+
+      @include mobile {
+        width: 50px;
+        height: 50px;
+        border: solid 2px var(--bright_ube-color);
+      }
+
+    &:hover {
+      background: var(--amethyst-color);
+      border: solid 3px var(--white-color);
+
+      & .to-top__btn-rect {
+        border-top: solid 2px var(--white-color);
+        border-left: solid 2px var(--white-color);
+
+      }
+    }
+
+    &:active {
+      background: var(--bright_ube-color);
+      border: solid 3px var(--amethyst-color);
+    }
+
+    &-rect {
+      position: relative;
+      top: 4px;
+      width: 25px;
+      height: 25px;
+      border-top: solid 2px var(--amethyst-color);
+      border-left: solid 2px var(--amethyst-color);
+      transform: rotateZ(45deg);
+      transition: border 250ms var(--default-cubic);
+
+      @include small-tablet {
+        width: 17px;
+        height: 17px;
+      }
+
+      @include mobile {
+        width: 15px;
+        height: 15px;
+        top: 3px;
+      }
+    }
+  }
+}

@@ -421,7 +421,7 @@
 .filter-dropdown {
   width: 400px;
   height: 40px;
-  background: transparent;
+  background: var(--black-color-50);
   transition: all 500ms var(--default-cubic);
   position: relative;
   z-index: 9;
@@ -502,7 +502,7 @@
 .filter-dropdown .filter-dropdown-menu {
   position: absolute;
   z-index: 2;
-  background: transparent;
+  background: var(--black-color-50);
   border: solid 1px var(--signal_gray-color);
   border-radius: 6px;
   width: 400px;
