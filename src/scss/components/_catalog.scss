@@ -312,17 +312,21 @@
 
 .wrapper {
   width: 800px;
+  min-height: 1144px;
 
   @include tablet {
     width: 437px;
+    min-height: 1240px;
   }
 
   @include small-tablet {
     width: 668px;
+    min-height: 1144px;
   }
 
   @include mobile {
     width: 290px;
+    min-height: 0px;
   }
 }
 
@@ -391,6 +395,18 @@
         display: flex;
         margin-bottom: 0;
         margin-top: 0;
+
+        &.task-2 {
+          height: 239px;
+
+          @include tablet {
+            height: 180px;
+          }
+
+          @include mobile {
+            height: 160px;
+          }
+        }
 
         @include tablet {
           height: 434px;
@@ -528,10 +544,6 @@
     flex-direction: row;
     align-items: center;
     gap: 36px;
-
-    @include tablet {
-      height: 384px;
-    }
 
     &__list {
       display: flex;
@@ -687,6 +699,18 @@
 
     &__text {
       width: 275px;
+
+      @include tablet {
+        width: 207px;
+        position: relative;
+        left: -10px;
+      }
+
+      @include mobile {
+        width: 174px;
+        position: relative;
+        left: -16px;
+      }
 
       &-h3 {
         color: var(--gray_amber-color);
